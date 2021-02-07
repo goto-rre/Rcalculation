@@ -1,26 +1,32 @@
 body {
-  margin: 0;
+  font-size: 2rem;
+  width: 800px;
+  margin: 0 auto;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.container {
-  display: flex;
-  flex: 1;
+  display: grid;
+  grid-template:
+    "... ...... ...... ...... ...... ...... ..."
+    "... header header header header header ..." 150px
+    "... ...... ...... ...... ...... ...... ..."
+    "... left   ...... center ...... right  ..." 1fr
+    "... ...... ...... ...... ...... ...... ..."
+    "... footer footer footer footer footer ..." 300px
+    "... ...... ...... ...... ...... ...... ..."
+    / auto 150px auto 1fr auto 200px auto;
 }
 header {
-  height: 150px;
+  grid-area: header;
 }
 main {
-  flex: 1;
+  grid-area: center;
 }
 
 nav {
-  width: 150px;
+  grid-area: left;
 }
 aside {
-  width: 200px;
+  grid-area: right;
 }
 footer {
-  height: 200px;
+  grid-area: footer;
 }
